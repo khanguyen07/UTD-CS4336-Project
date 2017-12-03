@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Theater List</title>
+        <style type="text/css">
+            table.panel td {
+               
+                text-align: center;
+                padding: 2px;
+                font-family: Arial, Verdana, sans-serif;
+                border: 3px solid #ffffff;
+                background-color: #999999;
+                color: #ffffff;
+                border-bottom: 2px solid #000;
+            }
+            
+            div.main {
+                text-align: center;
+                margin: auto;
+                width: 80%;
+                border: 3px solid green;
+                padding: 10px;
+            }
+            
+            table.panel {
+                margin: auto;
+            }
+        </style>
+    </h:head>
+    <h:body style="background-image: url(resources/images/backgroundedited.jpg)">
+        <div class="main">
+        <h:form>
+            <h3 style="color: aliceblue">Theater List</h3>
+            <h:panelGrid class="panel" columns="2">
+                
+                <h:outputLabel value="Theater ID"/>
+                <h:outputText value="#{mainPageBean.theater.theaterid}"/>
+                
+                <h:outputLabel value="Theater Name"/>
+                <h:outputText value="#{mainPageBean.theater.theatername}"/>
+                
+                <h:outputLabel value="Address"/>
+                <h:outputText value="#{mainPageBean.theater.address}"/>
+                
+                <h:outputLabel value="City"/>
+                <h:outputText value="#{mainPageBean.theater.city}"/>
+                
+                <h:outputLabel value="State"/>
+                <h:outputText value="#{mainPageBean.theater.states}"/>
+                
+                <h:outputLabel value="Zip"/>
+                <h:outputText value="#{mainPageBean.theater.zip}"/>
+            </h:panelGrid>
+            <br/>
+            <h:commandButton value="Back to main page" action="index.xhtml"/>
+            <h:commandButton value="Show Movie List" action="#{showMovieBean.showMovie()}">
+                <f:param name="theaterid" value="#{mainPageBean.theater.theaterid}"/> 
+            </h:commandButton>
+        </h:form>
+        </div>
+    </h:body>
+</html>
+

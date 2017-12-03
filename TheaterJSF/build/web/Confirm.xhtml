@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Order Confirmation</title>
+        <style type="text/css">
+            table.panel td {
+               
+                text-align: center;
+                padding: 2px;
+                font-family: Arial, Verdana, sans-serif;
+                border: 3px solid #ffffff;
+                background-color: #003300;
+                color: #ffffff;
+                border-bottom: 2px solid #000;
+            }
+            
+            div.main {
+                text-align: center;
+                margin: auto;
+                width: 80%;
+                border: 3px solid green;
+                padding: 10px;
+            }
+            
+            table.panel {
+                margin: auto;
+            }
+        </style>
+    </h:head>
+    <h:body style="background-image: url(resources/images/backgroundedited.jpg)">
+        <h:form>
+        <div style="text-align: center">
+            <h3 style="color: white">Order Summary</h3>
+            <h:panelGrid class="panel" columns="2">
+               
+                <h:outputLabel value="Movie title"/>
+                <h:outputText value="#{buyTicketBean.movie.title}"/>
+                
+                <h:outputLabel value="Showtime"/>
+                <h:outputText value="#{buyTicketBean.showtime}"/>
+                
+                <h:outputLabel value="Number of Ticket"/>
+                <h:outputText value="#{buyTicketBean.ticket}"/>
+                
+                <h:outputLabel value="Total"/>
+                <h:outputText value="$#{buyTicketBean.total}"/>
+            </h:panelGrid>
+            
+            <h3 style="color: white">Thank you for your purchase.</h3><br/>
+            <h:commandButton value="Back to home page" action="index.xhtml"/>
+        </div>
+            
+        </h:form>
+    </h:body>
+</html>
+

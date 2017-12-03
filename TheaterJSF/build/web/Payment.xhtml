@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Payment</title>
+        <style type="text/css">
+            table.panel td {
+               
+                text-align: center;
+                padding: 2px;
+                font-family: Arial, Verdana, sans-serif;
+                border: 3px solid #ffffff;
+                background-color: #003300;
+                color: #ffffff;
+                border-bottom: 2px solid #000;
+            }
+            
+            div.main {
+                text-align: center;
+                margin: auto;
+                width: 80%;
+                border: 3px solid green;
+                padding: 10px;
+            }
+            
+            table.panel {
+                margin: auto;
+            }
+        </style>
+    </h:head>
+    <h:body style="background-image: url(resources/images/backgroundedited.jpg)">
+        <div class="main">
+        <h:form>
+            <h3 style="color: aliceblue">Payment</h3>
+            <h:panelGrid class="panel" columns="2">
+         
+                <h:outputLabel value="Purchasing ticket for"/>
+                <h:outputLabel value="#{buyTicketBean.movie.title}"/>
+                
+                <h:outputLabel value="Number of ticket"/>
+                <h:inputText value="#{buyTicketBean.ticket}"/>
+
+                <h:outputLabel value="Ticket price"/>
+                <h:outputLabel value="$10/each"/>
+                
+                <h:outputLabel value="Showtime"/>
+                <h:selectOneRadio value="#{buyTicketBean.showtime}">
+                    <f:selectItem itemValue="#{buyTicketBean.movie.time1}" itemLabel="#{buyTicketBean.movie.time1}" />
+                    <f:selectItem itemValue="#{buyTicketBean.movie.time2}" itemLabel="#{buyTicketBean.movie.time2}" />
+                    <f:selectItem itemValue="#{buyTicketBean.movie.time3}" itemLabel="#{buyTicketBean.movie.time3}" />
+                </h:selectOneRadio>
+                
+                <h:outputLabel value="Credit card number"/>
+                <h:inputText id="creditcard" value="#{buyTicketBean.creditcard}" required="true" label="Credit Card">
+                    <f:validateLength minimum="16" maximum="16" />
+                </h:inputText>
+                
+                
+                <h:outputLabel value="Name on card"/>
+                <h:inputText value="#{buyTicketBean.nameoncard}"/>
+                
+                <h:outputLabel value="Expiration date"/>
+                <h:inputText value="#{buyTicketBean.expirationdate}"/>
+                
+               
+                
+            </h:panelGrid>
+                <h:message for="creditcard" style="color:red"/><br/>
+                 <h:commandButton value="Buy" action="#{buyTicketBean.confirm()}"/><br/>
+                 <h:commandButton value="Back to home page" action="index.xhtml"/>
+        </h:form>
+        </div>    
+    </h:body>
+</html>
+

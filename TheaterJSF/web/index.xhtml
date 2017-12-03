@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      
+      
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Movie Theater Ticket Purchase</title>
+        <style type="text/css">
+            
+            div.main {
+                width: 200px;
+                height: 100px;
+                background-color: #ccccff;
+                padding:30px;
+                position: fixed;
+                top:-400px;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                border: 2px solid #000;
+                text-align: center;
+                font-family: Arial, Verdana, sans-serif;
+            }
+            
+            
+            
+            
+        </style>
+    </h:head>
+    <h:body style="background-image: url(resources/images/backgroundedited.jpg)">
+        <div>
+            <h3 style="text-align: center; color: azure">Movie Theater Ticket Purchase</h3>
+        </div>
+        <div class="main">
+        <h:form>
+            <h:outputLabel value="Please enter a zip code"/><br/>
+            <h:inputText id="zip" value="#{mainPageBean.zipcode}" required="true" label="Zip">
+                <f:validateLength minimum="5" maximum="5"/>
+            </h:inputText><br/>
+            <h:message for="zip" style="color:red"/><br/>
+            <h:commandButton value="Find Theater" action="#{mainPageBean.showTheater()}" />      
+        </h:form>
+        </div>
+    </h:body>
+</html>
+

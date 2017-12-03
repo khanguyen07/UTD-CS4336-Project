@@ -1,0 +1,45 @@
+The DB name is TheaterDB. Username: scott - Password: tiger.
+
+JSF pages:
+
+- index.xhtml for the main page
+- Theater.xhtml to list the theaters
+- Movie.xhtml list the movies
+- BuyTicket.xhtml show descriptions, showtimes, and movie information
+- Payment.xhtml let user choose showtime and input credit card information
+- Confirm.xhtml calculate the total and print out order summary
+
+JavaBean:
+
+- MainPageBean.java handles the zipcode input to display theaters
+- ShowMovieBean.java shows list of movies.
+- BuyTicketBean.java handles the ticket purchase.
+
+EJB:
+
+- TheaterEJB.java request data from database
+
+Entity classes:
+
+- All the entities from database
+
+Database:
+
+- TheaterDB
+
+Zip file images.zip contains the poster. In case the posters don't show up, please copy all the images to web/resources/images/
+
+-Zipcode to test:
+
+75040
+75041
+75238
+75098
+75025
+75150
+
+- Work flow:
+
+Input the zipcode and click Find Theater. Then click Show Movie List. Click Buy Ticket button on the right of each movie to see movie information. Click on Buy Ticket button at the bottom to go to payment page. Input number of ticket, pick a showtime, enter credit card number, name and expiration date. Click Buy ticket to go to Confirm page. Click Back to home page to go back.
+
+Thank you!
