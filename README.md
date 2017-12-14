@@ -42,3 +42,5 @@ You should also create two diagrams:
 Code:
 
 A working system should be created (with a simulated payment system).  The code should be easy to read, and comments should be used to guide the reader.  
+
+To UTD students that are or will be taking this class: You can use the codes as a reference. Please do not take these codes and submit them as your own work. Do not plagiarize. 
